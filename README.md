@@ -91,6 +91,7 @@ python3 train_resnet.py \
   --data-root /path/to/original_dataset \
   --dmix-root /path/to/generated_dmix_dataset \
   --save-dir /path/to/checkpoints \
+```
 
 ### 💬 Citation
 ```
