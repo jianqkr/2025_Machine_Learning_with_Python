@@ -40,6 +40,8 @@ other_prompts= ["Pointillism", "sepia", "etching", "twilight", "grainy film text
 ```
 
 ### 📁 Dataset Structure
+We used the FGVC (fine-grained visual classification) Aircraft Benchmark for model training.
+(https://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/)
 ```
 aircraft_100cls
 train
@@ -70,10 +72,25 @@ diffuseMix or diffuseMix_bbox
 
 ### ✨ DiffuseMix Augmentation
 To introduce the structural complexity, you can download fractal image dataset from here [Fractal Dataset](https://drive.google.com/drive/folders/1uxK7JaO1NaJxaAGViQa1bZfX6ZzNMzx2?usp=sharing)
+IMAGES_BOX.TXT containts bounding box(bbox) coordinates for the single object in each image.
 ```
 python3 main_prompt.py --train_dir PATH --fractal_dir PATH --out_dir PATH --device 0
 python3 main_bbox.py --train_dir PATH --fractal_dir PATH --out_dir PATH --device 0 --bbox_file IMAGES_BOX.TXT PATH
 ```
+
+### 💡 Train with augmented data
+- `--data-root`: Path to your original training dataset (the existing dataset you normally train on).
+  It should contain the standard split folders, e.g. `train/`, `val/`, and `test/`.
+
+- `--dmix-root`: Path to the generated DiffuseMix dataset you created.
+  This directory should be organized in `ImageFolder` format (one subfolder per class).
+
+Example:
+```bash
+python3 train_resnet.py \
+  --data-root /path/to/original_dataset \
+  --dmix-root /path/to/generated_dmix_dataset \
+  --save-dir /path/to/checkpoints \
 
 ### 💬 Citation
 ```
@@ -82,5 +99,15 @@ python3 main_bbox.py --train_dir PATH --fractal_dir PATH --out_dir PATH --device
   author={Khawar Islam, Muhammad Zaigham Zaheer, Arif Mahmood, Karthik Nandakumar},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2024}
+}
+
+@techreport{maji13fine-grained,
+   title         = {Fine-Grained Visual Classification of Aircraft},
+   author        = {S. Maji and J. Kannala and E. Rahtu
+                    and M. Blaschko and A. Vedaldi},
+   year          = {2013},
+   archivePrefix = {arXiv},
+   eprint        = {1306.5151},
+   primaryClass  = "cs-cv",
 }
 ```
