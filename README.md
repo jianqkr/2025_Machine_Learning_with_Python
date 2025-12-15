@@ -29,7 +29,7 @@ conda remove -n DiffuseMix --all # In case environment installation faileds
 ```
 
 ### 📝 List of Prompts 
-Below is the list of prompts, other_prompts list are the new prompts we tested.
+Below is the list of prompts, other_prompts are the new prompts we tested.
 
 ```
 prompts = ["Autumn", "snowy", "watercolor art","sunset", "rainbow", "aurora",
