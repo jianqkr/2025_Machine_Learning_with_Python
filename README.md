@@ -53,7 +53,7 @@ train
 ### 🎶 Examples of Result
 ```
 data_example
-diffuseMix/diffuseMix_bbox
+diffuseMix or diffuseMix_bbox
  └─── original
           └───── 0743290_dmix_0.jpg
  └─── other_prompts
