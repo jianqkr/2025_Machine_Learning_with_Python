@@ -18,7 +18,7 @@
 ---
 
 ### 📢 Latest Updates
-- **Mar-11-24**: DiffuseMix paper is released [arxiv link](https://arxiv.org/abs/2405.14881). 🔥🔥
+- **Mar-11-24**: DiffuseMix paper is released [arxiv link](https://arxiv.org/abs/2405.14881). 
 
 ### 🚀 Getting Started
 Setup anaconda environment using `environment.yml` file.
@@ -29,13 +29,13 @@ conda remove -n DiffuseMix --all # In case environment installation faileds
 ```
 
 ### 📝 List of Prompts 
-Below is the list of prompts, if your accuracy is low then you can use all prompts to increase the performance. Remember that each prompt takes a time to generate images, so the best way is to start from two prompts then increase the number of prompts.
+Below is the list of prompts, other_prompts list are the new prompts we tested.
 
 ```
 prompts = ["Autumn", "snowy", "watercolor art","sunset", "rainbow", "aurora",
                "mosaic", "ukiyo-e", "a sketch with crayon"]
 
-prompts= ["Pointillism", "sepia", "etching", "twilight", "grainy film texture",
+other_prompts= ["Pointillism", "sepia", "etching", "twilight", "grainy film texture",
             "spring bloom", "stormy sky", "pixel art", "golden hour"]          
 ```
 
@@ -60,6 +60,13 @@ diffuseMix/diffuseMix_bbox
           └───── 0817494_dmix_0.jpg
  └─── ...
 ```
+<p align="center">
+    <img src="data_example/bbox_vis/0817494.jpg" alt="Bounding Box Visualization">
+</p>
+
+<p align="center">
+    <img src="data_example/diffuseMix_bbox/other_prompts/0817494_dmix_0.jpg" alt="Bounding Box Visualization">
+</p>
 
 ### ✨ DiffuseMix Augmentation
 To introduce the structural complexity, you can download fractal image dataset from here [Fractal Dataset](https://drive.google.com/drive/folders/1uxK7JaO1NaJxaAGViQa1bZfX6ZzNMzx2?usp=sharing)
